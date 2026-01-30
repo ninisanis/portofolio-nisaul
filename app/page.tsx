@@ -41,16 +41,29 @@ export default function Home() {
           </div>
         </div>
 
-        {/* PHOTO */}
-        <div className="relative h-64 w-64 md:h-80 md:w-80">
-          <Image
-            src="/profile.jpg"
-            alt="Profile photo"
-            fill
-            className="rounded-2xl object-cover"
-            priority
-          />
-        </div>
+        {/* PHOTOS GRID */}
+<div className="grid grid-cols-2 gap-4">
+  {[
+    "/profile.jpg",
+    "/profile.jpeg",
+    "/profile3.jpeg",
+    "/profile4.jpeg",
+  ].map((src, index) => (
+    <div
+      key={index}
+      className="relative h-32 w-32 md:h-40 md:w-40"
+    >
+      <Image
+        src={src}
+        alt={`Profile photo ${index + 1}`}
+        fill
+        className="rounded-xl object-cover border border-slate-800"
+        priority={index === 0}
+      />
+    </div>
+  ))}
+</div>
+
       </section>
 
       {/* ================= ABOUT ================= */}
@@ -189,7 +202,24 @@ export default function Home() {
         </h3>
 
         <div className="space-y-2 text-neutral-400">
-          <p>Email: nisaul@email.com</p>
+          <p>
+            Enail:{" "}
+            <a
+              href="mailto:nisaulfadhilah.work@gmail.com"
+              className="text-butter hover:underline"
+            >
+              nisaulfadhilah.work@gmail.com
+            </a>
+          </p>
+          <p>
+            WhatsApp:{" "}
+            <a
+              href="https://wa.me/6282371803116"
+              className="text-butter hover:underline"
+            >
+              wa.me/6282371803116
+            </a>
+          </p>
           <p>
             GitHub:{" "}
             <a
@@ -199,7 +229,15 @@ export default function Home() {
               github.com/ninisanis
             </a>
           </p>
-          <p>LinkedIn: linkedin.com/in/your-profile</p>
+          <p>
+            Linkedin:{" "}
+            <a
+              href="https://www.linkedin.com/in/nisa-ul-fadhilah"
+              className="text-butter hover:underline"
+            >
+              linkedin.com/in/nisa-ul-fadhilah
+            </a>
+          </p>
         </div>
       </section>
 
